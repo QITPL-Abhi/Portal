@@ -2,4 +2,9 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="red">#E60023</color>
+    <color name="green">#297E09</color>
+    <color name="orange">#CE4620</color>
+    <color name="background_gradient">#FFD700</color>
+    <color name="hintColor">#B8B1B1</color>
 </resources>
