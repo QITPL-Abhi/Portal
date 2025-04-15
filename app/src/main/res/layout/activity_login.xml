@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAF3">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Logo -->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="84dp"
+            android:layout_marginTop="32dp"
+            android:contentDescription="Logo"
+            android:src="@drawable/lotus" />
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Login"
+            android:textColor="#1D1D1F"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="24dp"
+            android:text="Take the first step"
+            android:textColor="#1D1D1F"
+            android:textSize="16sp" />
+
+        <!-- Input Fields -->
+        <EditText
+            android:id="@+id/loginEmailId"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/input_background"
+            android:hint="Email"
+            android:padding="12dp"
+            android:textColorHint="@color/HintColor"
+            android:textColor="@color/black"
+            android:maxLength="30"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/loginPasswordId"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/input_background"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:padding="12dp"
+                android:paddingEnd="50dp"
+                android:paddingRight="50dp"
+                android:textColorHint="@color/HintColor"
+                android:textColor="@color/black"
+                android:maxLength="15"/>
+
+            <ImageView
+                android:id="@+id/loginShowPassId"
+                android:layout_width="43dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/password"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="309dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="11dp"
+                android:layout_marginBottom="12dp"
+                android:paddingBottom="2dp"
+                android:src="@drawable/close_eyes" />
+
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/signupBtnId"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="#557A5E"
+            android:text="Sign In"
+            android:textColor="#FFFFFF" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="24dp"
+            android:text="Create New Account ? Signup"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+</ScrollView>

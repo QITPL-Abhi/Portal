@@ -45,4 +45,14 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    // Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+
+    // Coroutines
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.android)
+
+    implementation (libs.okhttp)
+    implementation (libs.logging.interceptor)
 }
