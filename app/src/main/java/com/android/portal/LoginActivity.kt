@@ -1,13 +1,17 @@
 package com.android.portal
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.edit
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
 
@@ -21,6 +25,8 @@ class LoginActivity : AppCompatActivity() {
         val loginEmailId = findViewById<EditText>(R.id.loginEmailId)
         val passwordLoginID = findViewById<EditText>(R.id.loginPasswordId)
         val signupBtnId = findViewById<Button>(R.id.signupBtnId)
+        val navigateToSignupId = findViewById<TextView>(R.id.navigateToSignupId)
+
 
         var isPasswordVisible = false
 
@@ -51,7 +57,17 @@ class LoginActivity : AppCompatActivity() {
                     )
 
                     if (response.isSuccessful) {
-                        println("${response.body()?.status.toString()} ${response.body()?.message.toString()}")
+                        println("login respose " + response.body()?.data.toString())
+                        if (response.body()?.status.toString() == "success") {
+                            val session = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+                            session.edit() {
+                                putString("login", response.body()?.data.toString())
+                            }
+                            val navigateToDashboard =
+                                Intent(this@LoginActivity, DashboardActivity::class.java)
+                            startActivity(navigateToDashboard)
+                            finish()
+                        }
                     } else {
                         Log.e("LoginError", "Error: ${response.code()} - ${response.message()}")
                     }
@@ -60,6 +76,11 @@ class LoginActivity : AppCompatActivity() {
                 }
             }
 
+        }
+
+        navigateToSignupId.setOnClickListener {
+            val navigateToSignup = Intent(this, SignupActivity::class.java)
+            startActivity(navigateToSignup)
         }
 
     }

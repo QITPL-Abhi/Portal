@@ -5,4 +5,3 @@ data class LoginRequestBody(
     val password: String,
     val apiKey: String
 )
-

@@ -7,8 +7,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
         android:layout_gravity="center"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
         android:padding="24dp">
 
@@ -47,10 +47,10 @@
             android:layout_marginBottom="12dp"
             android:background="@drawable/input_background"
             android:hint="Email"
+            android:maxLength="30"
             android:padding="12dp"
-            android:textColorHint="@color/HintColor"
             android:textColor="@color/black"
-            android:maxLength="30"/>
+            android:textColorHint="@color/HintColor" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -64,18 +64,18 @@
                 android:background="@drawable/input_background"
                 android:hint="Password"
                 android:inputType="textPassword"
+                android:maxLength="15"
                 android:padding="12dp"
                 android:paddingEnd="50dp"
                 android:paddingRight="50dp"
-                android:textColorHint="@color/HintColor"
                 android:textColor="@color/black"
-                android:maxLength="15"/>
+                android:textColorHint="@color/HintColor" />
 
             <ImageView
                 android:id="@+id/loginShowPassId"
                 android:layout_width="43dp"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/password"
+
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
@@ -99,6 +99,7 @@
 
 
         <TextView
+            android:id="@+id/navigateToSignupId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"

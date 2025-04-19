@@ -1,16 +1,214 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FAFAF3">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="84dp"
+            android:layout_marginTop="32dp"
+            android:contentDescription="Logo"
+            android:src="@drawable/lotus" />
+
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Sign Up"
+            android:textColor="#1D1D1F"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="24dp"
+            android:text="Create your account"
+            android:textColor="#1D1D1F"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/signupNameId"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/input_background"
+            android:hint="Name"
+            android:maxLength="30"
+            android:padding="12dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/HintColor" />
+
+        <EditText
+            android:id="@+id/signupEmailId"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/input_background"
+            android:hint="Email"
+            android:maxLength="30"
+            android:padding="12dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/HintColor" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/signupPasswordId"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/input_background"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:maxLength="15"
+                android:padding="12dp"
+                android:paddingEnd="50dp"
+                android:paddingRight="50dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/HintColor" />
+
+            <ImageView
+                android:id="@+id/signupShowPassId"
+                android:layout_width="43dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="11dp"
+                android:paddingBottom="2dp"
+                android:src="@drawable/close_eyes" />
+        </RelativeLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Login"/>
-    </LinearLayout>
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gender:"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp"/>
+            <RadioGroup
+                android:id="@+id/genderRadioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
+                <RadioButton
+                    android:id="@+id/genderMale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Male"
+                    android:textColor="@color/black" />
+
+                <RadioButton
+                    android:id="@+id/genderFemale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Female"
+                    android:textColor="@color/black" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Hobbies:"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/hobbyCooking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cooking"
+                android:textColor="@color/black" />
+
+            <CheckBox
+                android:id="@+id/hobbyCoding"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Coding"
+                android:textColor="@color/black" />
+
+            <CheckBox
+                android:id="@+id/hobbyGaming"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gaming"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/selectedImageView"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginBottom="24dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/person_placeholder"
+            android:visibility="gone" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/uploadProfilePicBtn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="#557A5E"
+            android:text="Upload Profile Picture"
+            android:textColor="#FFFFFF" />
+
+        <Spinner
+            android:id="@+id/designationSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/input_background"
+            android:padding="12dp"
+            android:popupBackground="@color/spinner_background_color"
+            android:spinnerMode="dropdown"
+            android:textColor="@color/primary_text_color" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/createAccountBtnId"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="#557A5E"
+            android:text="Create Account"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/navigateToLoginId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="24dp"
+            android:text="Already have an account? Sign In"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+    </LinearLayout>
 </ScrollView>
