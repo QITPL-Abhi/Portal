@@ -1,6 +1,7 @@
 package com.android.portal
 
 import com.android.portal.ResponseBody.DashboardResponse
+import com.android.portal.ResponseBody.ViewProfileResponse
 import okhttp3.MultipartBody
 import retrofit2.Response
 import retrofit2.http.Field
@@ -34,5 +35,11 @@ interface ApiService {
     suspend fun getDashboardData(
         @Field("id") id: String
     ): Response<DashboardResponse>
+
+    @FormUrlEncoded
+    @POST("getDataFromId.php?apiKey=ddd-otn745-jjgfd-uti-uiu")
+    suspend fun getViewData(
+        @Field("id") id: String
+    ): Response<ViewProfileResponse>
 
 }

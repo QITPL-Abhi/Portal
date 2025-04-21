@@ -37,7 +37,7 @@
             android:textSize="16sp" />
 
         <EditText
-            android:id="@+id/signupNameId"
+            android:id="@+id/editNameEditId"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginBottom="12dp"
@@ -49,7 +49,7 @@
             android:textColorHint="@color/HintColor" />
 
         <EditText
-            android:id="@+id/signupEmailId"
+            android:id="@+id/editEmailId"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginBottom="12dp"
@@ -65,7 +65,7 @@
             android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/signupPasswordId"
+                android:id="@+id/editPasswordId"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginBottom="12dp"
@@ -167,8 +167,7 @@
             android:layout_height="120dp"
             android:layout_marginBottom="24dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/person_placeholder"
-            android:visibility="gone" />
+            android:src="@drawable/person_placeholder" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/uploadProfilePicBtn"
