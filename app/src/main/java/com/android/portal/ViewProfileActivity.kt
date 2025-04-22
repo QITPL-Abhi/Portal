@@ -2,9 +2,12 @@ package com.android.portal
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import android.widget.ImageView
+import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -29,7 +32,13 @@ class ViewProfileActivity : AppCompatActivity() {
         val profileHobbiesId = findViewById<TextView>(R.id.profileHobbiesId)
         val profileDesignationId = findViewById<TextView>(R.id.profileDesignationId)
         val profileImageViewId = findViewById<ImageView>(R.id.profileImageViewId)
+        val navigateToEditProfileId = findViewById<Button>(R.id.navigateToEditProfileId)
 
+
+        navigateToEditProfileId.setOnClickListener (){
+            val navigateToEditProfile = Intent(this, ProfileEditActivity::class.java)
+            startActivity(navigateToEditProfile)
+        }
 
 
         lifecycleScope.launch {
@@ -47,7 +56,7 @@ class ViewProfileActivity : AppCompatActivity() {
                         profileHobbiesId.text= ViewResponse?.data?.hobbies.toString()
                         profileDesignationId.text= ViewResponse?.data?.designation.toString()
                         Picasso.get()
-                            .load("http://192.168.1.17/abhi/app_api/uploads/" + ViewResponse?.data?.profile_image.toString())
+                            .load("http://192.168.1.4/abhi/portal_apis/uploads/" + ViewResponse?.data?.profile_image.toString())
                             .into(profileImageViewId)
                         println(ViewResponse?.data?.name.toString())
                     }

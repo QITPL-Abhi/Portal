@@ -37,7 +37,7 @@
             android:textSize="16sp" />
 
         <EditText
-            android:id="@+id/editNameEditId"
+            android:id="@+id/signupNameId"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginBottom="12dp"
@@ -49,7 +49,7 @@
             android:textColorHint="@color/HintColor" />
 
         <EditText
-            android:id="@+id/editEmailId"
+            android:id="@+id/signupEmailId"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginBottom="12dp"
@@ -65,7 +65,7 @@
             android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/editPasswordId"
+                android:id="@+id/signupPasswordId"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginBottom="12dp"
@@ -81,8 +81,8 @@
 
             <ImageView
                 android:id="@+id/signupShowPassId"
-                android:layout_width="43dp"
-                android:layout_height="wrap_content"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="14dp"
                 android:layout_marginEnd="11dp"
@@ -93,15 +93,17 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="16dp"
+            android:orientation="vertical">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:text="Gender:"
                 android:textColor="@color/black"
-                android:textSize="16sp"
-                android:layout_marginBottom="8dp"/>
+                android:textSize="16sp" />
+
             <RadioGroup
                 android:id="@+id/genderRadioGroup"
                 android:layout_width="match_parent"
@@ -127,8 +129,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="16dp"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"

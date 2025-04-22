@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         val sharedPref = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
         val loginUserId = sharedPref.getString("login", "")
         println("login id $loginUserId")
-        if (loginUserId == "null" || loginUserId =="") {
+        if (loginUserId == "null" || loginUserId == "") {
             val navigateToLogin = Intent(this, LoginActivity::class.java)
             startActivity(navigateToLogin)
             finish()

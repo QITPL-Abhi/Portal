@@ -73,15 +73,15 @@
 
             <ImageView
                 android:id="@+id/loginShowPassId"
-                android:layout_width="43dp"
-                android:layout_height="wrap_content"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
 
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="309dp"
-                android:layout_marginTop="14dp"
-                android:layout_marginEnd="11dp"
+                android:layout_marginStart="318dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="2dp"
                 android:layout_marginBottom="12dp"
                 android:paddingBottom="2dp"
                 android:src="@drawable/close_eyes" />
@@ -90,8 +90,8 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/signupBtnId"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="@drawable/rounded_button"
             android:backgroundTint="#557A5E"
             android:text="Sign In"

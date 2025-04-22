@@ -1,6 +1,203 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FAFAF3">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <ImageButton
+            android:id="@+id/editUploadPicBtn"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="Logo"
+            android:src="@drawable/person_placeholder" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Edit Profile"
+            android:textColor="#1D1D1F"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="24dp"
+            android:text="Update your account information"
+            android:textColor="#1D1D1F"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editNameId"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/input_background"
+            android:hint="Name"
+            android:maxLength="30"
+            android:padding="12dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/HintColor" />
+
+        <EditText
+            android:id="@+id/editEmailId"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/input_background"
+            android:hint="Email"
+            android:maxLength="30"
+            android:padding="12dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/HintColor" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/editPasswordId"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/input_background"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:maxLength="15"
+                android:padding="12dp"
+                android:paddingEnd="50dp"
+                android:paddingRight="50dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/HintColor" />
+
+            <ImageView
+                android:id="@+id/editProfileShowPassId"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="318dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="12dp"
+                android:paddingBottom="2dp"
+                android:src="@drawable/close_eyes" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Gender:"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <RadioGroup
+                android:id="@+id/editGenderRadioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/editGenderMaleId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Male"
+                    android:textColor="@color/black" />
+
+                <RadioButton
+                    android:id="@+id/editGenderFemaleId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Female"
+                    android:textColor="@color/black" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Hobbies:"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/editHobbyCookingId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cooking"
+                android:textColor="@color/black" />
+
+            <CheckBox
+                android:id="@+id/editHobbyCodingId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Coding"
+                android:textColor="@color/black" />
+
+            <CheckBox
+                android:id="@+id/editHobbyGamingId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gaming"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <Spinner
+            android:id="@+id/editDesignationSpinnerId"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/input_background"
+            android:padding="12dp"
+            android:popupBackground="@color/spinner_background_color"
+            android:spinnerMode="dropdown"
+            android:textColor="@color/primary_text_color" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/updateAccountBtnId"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="#557A5E"
+            android:text="Update Account"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/backToProfileId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="24dp"
+            android:text="Back to Profile"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+</ScrollView>
