@@ -42,4 +42,16 @@ interface ApiService {
         @Field("id") id: String
     ): Response<ViewProfileResponse>
 
+    @Multipart
+    @POST("getUpdateLogin.php?apiKey=ddd-otn745-jjgfd-uti-uiu")
+    suspend fun getUpdateLogin(
+        @Part("loginId") loginId: okhttp3.RequestBody,
+        @Part("name") name: okhttp3.RequestBody,
+        @Part("email") email: okhttp3.RequestBody,
+        @Part("password") password: okhttp3.RequestBody,
+        @Part("gender") gender: okhttp3.RequestBody,
+        @Part("designation") designation: okhttp3.RequestBody,
+        @Part("hobbies") hobbies: okhttp3.RequestBody,
+    ): Response<SignupResponse>
+
 }

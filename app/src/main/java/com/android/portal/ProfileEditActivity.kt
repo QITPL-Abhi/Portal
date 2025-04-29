@@ -2,6 +2,7 @@ package com.android.portal
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
 import android.util.Log
@@ -21,8 +22,15 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
+import com.android.portal.SignupActivity
 import com.squareup.picasso.Picasso
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.MultipartBody
+import okhttp3.RequestBody.Companion.asRequestBody
+import okhttp3.RequestBody.Companion.toRequestBody
+import java.io.File
 
 class ProfileEditActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
@@ -99,7 +107,7 @@ class ProfileEditActivity : AppCompatActivity() {
         }
         editDesignationSpinnerId.adapter = adapter
 
-
+//Data Fetch Api Call
         lifecycleScope.launch {
             try {
                 val response = RetrofitClient.apiService.getViewData(
@@ -168,6 +176,8 @@ class ProfileEditActivity : AppCompatActivity() {
             }
         }
 
+
+//        Update Api Call
         updateAccountBtnId.setOnClickListener (){
             val selectedHobbies = mutableListOf<String>()
             if (editHobbyCookingId.isChecked) {
@@ -179,12 +189,53 @@ class ProfileEditActivity : AppCompatActivity() {
             if (editHobbyGamingId.isChecked) {
                 selectedHobbies.add("gaming")
             }
+            val editName = editNameId.text.toString()
+            val editEmail = editEmailId.text.toString()
+            val editPassword = editPasswordId.text.toString()
 
             val editGender = if(editGenderMaleId.isChecked) "Male" else "Female"
             val editHobbies = selectedHobbies.joinToString(",")
             val editDesignation = editDesignationSpinnerId.selectedItem.toString()
 
+            lifecycleScope.launch(Dispatchers.IO) {
+                try {
+                    val response = RetrofitClient.apiService.getUpdateLogin(
+                        loginId = loginUserId.toString().toRequestBody("text/plain".toMediaTypeOrNull()) ,
+                        name = editName.toRequestBody("text/plain".toMediaTypeOrNull()), // Convert to RequestBody
+                        email = editEmail.toRequestBody("text/plain".toMediaTypeOrNull()), // Convert to RequestBody
+                        password = editPassword.toRequestBody("text/plain".toMediaTypeOrNull()), // Convert to RequestBody
+                        gender = editGender.toRequestBody("text/plain".toMediaTypeOrNull()), // Convert to RequestBody
+                        designation = editDesignation.toRequestBody("text/plain".toMediaTypeOrNull()), // Convert to RequestBody
+                        hobbies = editHobbies.toRequestBody("text/plain".toMediaTypeOrNull())
+                    )
 
+                    if (response.isSuccessful) {
+                        val signupResponse = response.body()
+                        println(signupResponse?.status);
+                        val navigateToDashboard = Intent(this@ProfileEditActivity, DashboardActivity::class.java)
+                        startActivity(navigateToDashboard)
+                    } else {
+                        runOnUiThread {
+                            Toast.makeText(
+                                this@ProfileEditActivity,
+                                "Sign Up Failed: ${response.errorBody()?.string()}",
+                                Toast.LENGTH_LONG
+                            ).show()
+                            Log.e("SignupActivity", "Sign Up Failed: ${response.errorBody()?.string()}")
+                        }
+                    }
+
+                } catch (e: Exception) {
+                    runOnUiThread {
+                        Toast.makeText(
+                            this@ProfileEditActivity,
+                            "Sign Up Error: ${e.localizedMessage}",
+                            Toast.LENGTH_LONG
+                        ).show()
+                        Log.e("SignupActivity", "Sign Up Error: ${e.localizedMessage}", e)
+                    }
+                }
+            }
 
         }
     }
