@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.ImageButton
@@ -40,6 +41,7 @@ class ProfileEditActivity : AppCompatActivity() {
         val editHobbyCookingId = findViewById<CheckBox>(R.id.editHobbyCookingId)
         val editHobbyCodingId = findViewById<CheckBox>(R.id.editHobbyCodingId)
         val editHobbyGamingId = findViewById<CheckBox>(R.id.editHobbyGamingId)
+        val updateAccountBtnId = findViewById<Button>(R.id.updateAccountBtnId)
         val editDesignationSpinnerId = findViewById<Spinner>(R.id.editDesignationSpinnerId)
         val editProfileShowPassId = findViewById<ImageView>(R.id.editProfileShowPassId)
 
@@ -164,6 +166,26 @@ class ProfileEditActivity : AppCompatActivity() {
                     Log.e("DashboardActivity", "Error: ${e.localizedMessage}", e)
                 }
             }
+        }
+
+        updateAccountBtnId.setOnClickListener (){
+            val selectedHobbies = mutableListOf<String>()
+            if (editHobbyCookingId.isChecked) {
+                selectedHobbies.add("cooking")
+            }
+            if (editHobbyCodingId.isChecked) {
+                selectedHobbies.add("coding")
+            }
+            if (editHobbyGamingId.isChecked) {
+                selectedHobbies.add("gaming")
+            }
+
+            val editGender = if(editGenderMaleId.isChecked) "Male" else "Female"
+            val editHobbies = selectedHobbies.joinToString(",")
+            val editDesignation = editDesignationSpinnerId.selectedItem.toString()
+
+
+
         }
     }
 }
