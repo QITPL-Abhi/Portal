@@ -13,6 +13,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
 import androidx.lifecycle.lifecycleScope
+import com.android.portal.RequestBody.NotificationRequest
 import kotlinx.coroutines.launch
 
 
@@ -59,6 +60,15 @@ class LoginActivity : AppCompatActivity() {
                     if (response.isSuccessful) {
                         println("login respose " + response.body()?.data.toString())
                         if (response.body()?.status.toString() == "success") {
+                            val requests = NotificationRequest(
+                                token = "fRtxqdMQSoK91c5NND8SX1:APA91bFwW1srHnWs1m6LNf02Os7BzHUJ8Ta3vI5DDqxwWoZLENxFJhScyI3nRJBRB2YEJIN2I6ViTQZr0c0V7WZUCWIwcY9KrqlGkwptQJMrJ3KmyrXdS-E",
+                                title = "Hello Abhi Srivastava",
+                                body = " "
+                            )
+                            val responses = NotificationApi.apiService.getNotifications(requests)
+                            if (response.isSuccessful) {
+                                Log.d("Response Notification", "Success: ${responses.body()}")
+                            }
                             val session = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
                             session.edit() {
                                 putString("login", response.body()?.data.toString())

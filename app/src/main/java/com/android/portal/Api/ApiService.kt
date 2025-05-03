@@ -1,9 +1,11 @@
 package com.android.portal
 
+import com.android.portal.RequestBody.NotificationRequest
 import com.android.portal.ResponseBody.DashboardResponse
 import com.android.portal.ResponseBody.ViewProfileResponse
 import okhttp3.MultipartBody
 import retrofit2.Response
+import retrofit2.http.Body
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.Multipart
@@ -53,5 +55,12 @@ interface ApiService {
         @Part("designation") designation: okhttp3.RequestBody,
         @Part("hobbies") hobbies: okhttp3.RequestBody,
     ): Response<SignupResponse>
+
+
+    @POST("send-notification")
+    suspend fun getNotifications(
+        @Body request: NotificationRequest
+    ): Response<Any>
+
 
 }
