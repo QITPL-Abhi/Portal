@@ -56,7 +56,7 @@ class ViewProfileActivity : AppCompatActivity() {
                         profileHobbiesId.text= ViewResponse?.data?.hobbies.toString()
                         profileDesignationId.text= ViewResponse?.data?.designation.toString()
                         Picasso.get()
-                            .load("http://192.168.1.4/abhi/portal_apis/uploads/" + ViewResponse?.data?.profile_image.toString())
+                            .load("http://192.168.1.2/abhi/portal_apis/uploads/" + ViewResponse?.data?.profile_image.toString())
                             .into(profileImageViewId)
                         println(ViewResponse?.data?.name.toString())
                     }

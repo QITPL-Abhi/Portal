@@ -8,7 +8,7 @@ import com.android.portal.ApiService
 import com.google.gson.GsonBuilder
 
 object RetrofitClient {
-    private const val BASE_URL = "http://192.168.1.4/abhi/portal_apis/"
+    private const val BASE_URL = "http://192.168.1.2/abhi/portal_apis/"
 
     // Add the logging interceptor
     private val loggingInterceptor = HttpLoggingInterceptor().apply {

@@ -46,7 +46,7 @@ class DashboardActivity : AppCompatActivity() {
                     if (signupResponse?.status.toString() == "success") {
                         userNameDashboardId.text = signupResponse?.data?.name.toString()
                         Picasso.get()
-                            .load("http://192.168.1.4/abhi/portal_apis/uploads/" + signupResponse?.data?.profile_image.toString())
+                            .load("http://192.168.1.2/abhi/portal_apis/uploads/" + signupResponse?.data?.profile_image.toString())
                             .into(DashboardProfileImageId)
                     }
                     println(signupResponse?.data?.profile_image.toString())
